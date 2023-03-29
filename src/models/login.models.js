@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose
 
-const producsSchema = new Schema({
+const loginSchema = new Schema({
     username: {
         type: String,
         required: true
@@ -19,4 +19,4 @@ const producsSchema = new Schema({
         required: true
     }
 })
-export default mongoose.model('products', producsSchema);
+export default mongoose.model('login', loginSchema);
