@@ -17,6 +17,18 @@ const loginSchema = new Schema({
     avatar:{
         type: String,
         required: true
+    },
+    phone:{
+        type: String,
+        required: true
+    },
+    names:{
+        type: String,
+        required: true
+    },
+    dir:{
+        type: String,
+        required: true
     }
 })
 export default mongoose.model('login', loginSchema);
