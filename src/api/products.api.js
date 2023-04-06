@@ -41,3 +41,11 @@ export const deleteById = async (_id) =>{
         logger.warn(`error deleting product ${error}`)
     }
 }
+export const getByCategory = async (category)=>{
+    try {
+        const products = Products.find({category: category})
+        return products
+    } catch (error) {
+        logger.warn(`error getting product ${error}`)
+    }
+}

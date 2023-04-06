@@ -11,8 +11,7 @@ const orderSchema = new Schema({
         required: true
     },
     timestamp:{
-        type: String,
-        required: true
+        type: String
     },
     state:{
         type: Boolean,

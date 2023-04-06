@@ -3,11 +3,12 @@ import logger from '../utils/logger.js'
 
 export const getProducts = async (req,res) =>{
     try {
-        const currentSession = 'hola'
+        const currentSession = req.session.passport.user
         const currentPort = '8000'
         if (req.params._id){
-            const product = await productsApi.get(req.params.id)
-            return res.render('infoPage', {currentPort,currentSession,product})
+            const productByID = await productsApi.get(req.params._id)
+            const product = productByID[0]
+            return res.render('infoPage', {currentPort, currentSession, product})
         }
         const products = await productsApi.get()
         return res.render('index', {currentPort,currentSession,products})
@@ -41,5 +42,16 @@ export const deleteProductById = async (req, res)=>{
         return res.redirect('/api/productos')
     } catch (error) {
         logger.warn(`error deleting product ${error}`)
+    }
+}
+export const getProductsByCategory = async(req,res)=>{
+    try {
+        const currentSession = req.session.passport.user
+        const currentPort = '8000'
+        const category = req.params.category
+        const products = await productsApi.getByCategory(category)
+        return res.render('index', {currentPort,currentSession,products})
+    }catch(error){
+        logger.warn(`error getting products ${error}`)
     }
 }

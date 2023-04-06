@@ -6,8 +6,6 @@ import * as loginController from '../controllers/login.controller.js'
 
 router.use(sessionDBConnection)
 
-router.use(passport.initialize())
-router.use(passport.session())
 
 router.get('/', loginController.loginUser)
 router.post('/', passport.authenticate('local', {failureRedirect: '/failedlogin', successRedirect: '/api/productos'}))

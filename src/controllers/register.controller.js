@@ -26,17 +26,16 @@ export const registerUser = async (req,res) => {
             await loginApi.createLogin(newUser)
             return done(null, newUser)
         }))
-        passport.serializeUser( async function (user, done){
-            done(null, user.username)
-        })
-        passport.deserializeUser(async function (username,done){
-            const userSelected = await loginApi.getLoginByUsername(username)
-            done(null, userSelected)
-        })
         return res.render('registerPage.ejs')
     } catch (error) {
         logger.warn(error)
     }
 }
-
+passport.serializeUser( async function (user, done){
+    done(null, user.username)
+})
+passport.deserializeUser(async function (username,done){
+    const userSelected = await loginApi.getLoginByUsername(username)
+    done(null, userSelected)
+})
 

@@ -12,7 +12,6 @@ const cartSchema = new Schema({
     },
     timestamp:{
         type: String,
-        required: true
     }
 })
 export default mongoose.model('cart', cartSchema);

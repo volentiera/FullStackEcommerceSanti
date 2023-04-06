@@ -3,6 +3,8 @@ import * as loginApi from '../api/login.api.js'
 import bcryptjs from 'bcryptjs'
 import passport from 'passport'
 
+
+
 import { Strategy as LocalStrategy } from 'passport-local'
 
 
@@ -20,13 +22,6 @@ export const loginUser =  async (req,res) =>{
                 return done(null, userSelected)
             })
         }))
-        passport.serializeUser(function (user, done){
-            done(null, user.username)
-        })
-        passport.deserializeUser(async function (username,done){
-            const userSelected = await loginApi.getLoginByUsername(username)
-            done(null, userSelected)
-        })
     } catch (error) {
         logger.warn(error)
     }
@@ -37,3 +32,10 @@ export const loginUser =  async (req,res) =>{
         res.render('loginPage.ejs', {currentPort})
     }
 }
+passport.serializeUser(function (user, done){
+    done(null, user.username)
+})
+passport.deserializeUser(async function (username,done){
+    const userSelected = await loginApi.getLoginByUsername(username)
+    done(null, userSelected)
+})
