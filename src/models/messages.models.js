@@ -6,13 +6,12 @@ const messagesSchema = new Schema({
         type: Object,
         required: true
     },
-    messages:{
-        type: Array,
+    message:{
+        type: String,
         required: true
     },
     timestamp:{
-        type: String,
-        required: true
+        type: String
     }
 })
 export default mongoose.model('messages', messagesSchema);

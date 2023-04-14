@@ -4,7 +4,7 @@ import logger from '../utils/logger.js'
 export const getProducts = async (req,res) =>{
     try {
         const currentSession = req.session.passport.user
-        const currentPort = '8000'
+        const currentPort = parseInt(process.argv[2]) || 8000
         if (req.params._id){
             const productByID = await productsApi.get(req.params._id)
             const product = productByID[0]
@@ -47,7 +47,7 @@ export const deleteProductById = async (req, res)=>{
 export const getProductsByCategory = async(req,res)=>{
     try {
         const currentSession = req.session.passport.user
-        const currentPort = '8000'
+        const currentPort = parseInt(process.argv[2]) || 8000
         const category = req.params.category
         const products = await productsApi.getByCategory(category)
         return res.render('index', {currentPort,currentSession,products})

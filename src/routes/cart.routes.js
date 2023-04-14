@@ -3,7 +3,7 @@ const router = express.Router()
 import * as cartController from '../controllers/cart.controller.js'
 
 router.get('/',cartController.getCart)
-router.delete('/',cartController.deleteCart)
+router.get('/borrar',cartController.deleteCart)
 router.get('/crear', cartController.createCart)
 router.get('/producto/:_id', cartController.addProductToCart)
 

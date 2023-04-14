@@ -15,7 +15,7 @@ export const deleteCart = async (req, res) => {
     try {
         const usernameRecieved = req.session.passport.user
         await cartApi.deleteCart(usernameRecieved)
-        return res.redirect('/api/carrito')
+        return res.redirect('/api/productos')
     } catch (error) {
         logger.warn(error)
     }

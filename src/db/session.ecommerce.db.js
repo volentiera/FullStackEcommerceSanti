@@ -4,6 +4,7 @@ import MongoStore from 'connect-mongo'
 const advancedOptions = {
         useNewUrlParser: true,
         useUnifiedTopology: true
+        
 }
 
 const sessionDBConnection = session({
@@ -13,7 +14,10 @@ const sessionDBConnection = session({
     }),
     secret: `${process.env.DB_SECRET}`,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 900000
+    }
 })
 
 export default sessionDBConnection
