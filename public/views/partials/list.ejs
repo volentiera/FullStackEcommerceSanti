@@ -12,9 +12,22 @@
                     <div class="media-content">
                         <p class="title is-4"><%=product.name %></p>
                         <p class="subtitle is-6">$ <%=product.price %></p>
-                        <a class="ml-4" href="http://localhost:<%= currentPort %>/api/productos/<%=product._id %>">
-                            <button id="btnInfo" class="button is-large is-success mt-4">Ver Mas</button>
-                        </a>
+                        <div class="is-flex is-justify-content-center">
+                            <a href="https://desafiofinalbackendcoderhouse.onrender.com/api/productos/<%=product._id %>">
+                                <button id="btnInfo" class="button is-large is-success mt-4">Ver Mas</button>
+                            </a>
+                        </div>
+                        <div class="is-flex is-justify-content-center">
+                            <a class="ml-4"
+                                href="https://desafiofinalbackendcoderhouse.onrender.com/api/productos/editar/<%=product._id %>">
+                                <button id="editBtn" class="button is-small is-success mt-4"><i
+                                        class="fa-solid fa-pencil"></i></button>
+                            </a>
+                            <a class="ml-4"
+                                href="https://desafiofinalbackendcoderhouse.onrender.com/api/productos/borrar/<%=product._id %>">
+                                <button class="button is-small is-danger mt-4"><i class="fa-regular fa-circle-xmark"></i></button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
