@@ -3,28 +3,28 @@
         <h2 class="is-size-3">Bienvenido, <%= currentSession %></h2>
     </div>
     <div class="column is-half m-4">
-        <a class="m-3" href="https://desafiofinalbackendcoderhouse.onrender.com/api/productos">
+        <a class="m-3" href="http://localhost:<%= currentPort %>/api/productos">
             <button class="button is-link">Todo</button>
         </a>
-        <a class="m-3" href="https://desafiofinalbackendcoderhouse.onrender.com/api/productos/categoria/indumentaria">
+        <a class="m-3" href="http://localhost:<%= currentPort %>/api/productos/categoria/indumentaria">
             <button class="button is-link">Indumentaria</button>
         </a>
-        <a class="m-3" href="https://desafiofinalbackendcoderhouse.onrender.com/api/productos/categoria/calzado">
+        <a class="m-3" href="http://localhost:<%= currentPort %>/api/productos/categoria/calzado">
             <button class="button is-link">Calzado</button>
         </a>
-        <a class="m-3" href="https://desafiofinalbackendcoderhouse.onrender.com/api/productos/categoria/accesorio">
+        <a class="m-3" href="http://localhost:<%= currentPort %>/api/productos/categoria/accesorio">
             <button class="button is-link">Accesorios</button>
         </a>
     </div>
     <div class="column">
         <div class="is-flex is-justify-content-end">
-            <a class="m-3" href="https://desafiofinalbackendcoderhouse.onrender.com/api/mensajes">
+            <a class="m-3" href="http://localhost:<%= currentPort %>/api/mensajes">
                 <button id="btnCart" class="button is-link mg"><i class="fa-solid fa-comments"></i></button>
             </a>
-            <a class="m-3" href="https://desafiofinalbackendcoderhouse.onrender.com/api/logout">
+            <a class="m-3" href="http://localhost:<%= currentPort %>/api/logout">
                 <button id="btnLogout" class="button is-link">Logout</button>
             </a>
-            <a class="m-3" href="https://desafiofinalbackendcoderhouse.onrender.com/api/carrito">
+            <a class="m-3" href="http://localhost:<%= currentPort %>/api/carrito">
                 <button id="btnCart" class="button is-link mg"><i class="fa-solid fa-cart-plus"></i></button>
             </a>
         </div>
